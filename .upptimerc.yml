@@ -13,6 +13,10 @@ sites:
     expectedStatusCodes:
       - 200
     maxResponseTime: 5000
+    # Marks the check as a watcher's: the outage drill (Nasup-backend docs/drills/qa-03-outage.md)
+    # fails exactly these, and the monitor's own probe, while customers see nothing.
+    headers:
+      - "X-Nasup-Probe: status"
 
 # A short outage stays on record: incidents under 15 minutes are kept, not deleted.
 skipDeleteIssues: true
