@@ -1,31 +1,29 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Nasup's status page (QA-03, NFR-AVL-01, NFR-MNT-02): whether the customer app answers, from
+# outside Cloudflare, every 5 minutes, with its incidents and planned maintenance.
+# Public: it holds the app's public health URL and its up/down history only, no secrets and no
+# customer data. Workflows run on this repository's own token: the template's self-update and setup
+# workflows, which need a token that can rewrite workflows, were removed. Upptime's version is
+# changed here by hand.
+owner: Nasup-ai
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Nasup app
+    url: https://app.nasup.ai/v1/health
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+
+# A short outage stays on record: incidents under 15 minutes are kept, not deleted.
+skipDeleteIssues: true
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.nasup.ai
+  name: Nasup status
+  introTitle: "Is Nasup up?"
+  introMessage: Whether the Nasup app answers, checked every 5 minutes from outside our hosting, with any incident and planned maintenance. Planned maintenance is announced at least 3 days ahead and runs outside US business hours.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: Nasup app
+      href: https://app.nasup.ai

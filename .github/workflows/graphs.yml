@@ -24,6 +24,9 @@ on:
 concurrency:
   group: ${{ github.repository }}-${{ github.head_ref || github.ref_name }}-upptime
   cancel-in-progress: false
+# Only what this workflow needs: the organization keeps workflow tokens read-only by default.
+permissions:
+  contents: write
 jobs:
   release:
     name: Generate graphs
