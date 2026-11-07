@@ -4,17 +4,19 @@
     "url": "https://app.nasup.ai/v1/health",
     "icon": "https://icons.duckduckgo.com/ip3/app.nasup.ai.ico",
     "slug": "nasup-app",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 807,
-    "timeDay": 1266,
-    "timeWeek": 1226,
-    "timeMonth": 843,
-    "timeYear": 807,
-    "dailyMinutesDown": {}
+    "time": 795,
+    "timeDay": 839,
+    "timeWeek": 1124,
+    "timeMonth": 829,
+    "timeYear": 795,
+    "dailyMinutesDown": {
+      "2026-11-07": 0
+    }
   }
 ]
